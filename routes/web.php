@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/webIndex', 'IndexController@index');
+Route::get('/webIndex', 'App\Http\Controllers\IndexController@index');
 Route::get('users', function()
 {
     return 'Users!';
