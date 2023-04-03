@@ -13,14 +13,10 @@ use App\Http\Controllers\IndexController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/webIndex', 'App\Http\Controllers\IndexController@index');
 Route::get('users', function()
 {
     return 'Users!';
 });
 Route::get('/user/{id}', [UserController::class, 'show']);
+Route::get('/{path}', 'App\Http\Controllers\IndexController@index')->where('path', '.*');
+
